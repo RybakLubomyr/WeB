@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+    <title>Game</title>
+
+    <link href="css/plusstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+Знаходження невідомої сторони прямокутного трикутника<br>
+Сторона А
+<input name="number" id="you_num">
+Сторона B
+<input name="number" id="you_num1">
+<div class="dropdown open">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Сторони є
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" id="2K" href="#">Двома катетами</a>
+    <a class="dropdown-item" id="СAH" href="#">Катетом і гіпотенузою</a>
+  </div>
+</div>
+<button id="input_num">Розрахувати</button>
+<div id="rez" width="300" border="2px">
+  
+</div>
+<script type="text/javascript">
+var hints = '';
+
+input_num.onclick = function() {
+        
+    var num1 = $('#you_num').val(); 
+	var num2 = $('#you_num1').val(); 
+	if($('#2K')){
+		var side = sqrt(num1^2 + num2^2);
+		hints += side; 
+	} else if($('#KAH')){
+		var side = sqrt(num1^2 - num2^2);
+		hints += side; 
+	}
+	
+      
+    $('#rez').html(hints);
+   
+    
+   
+  }
+
+    </script>
+
+
+
+
+</body>
+</html>
