@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+    <title>Game</title>
+
+    <link href="css/plusstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+Розв'язування квадратного рівняння.<br>
+<div style="text-align:left;">
+	<input id="oms_c1" size="2" tabindex="1" class="oms_input_int_right">
+	<span class="oms_formula">x</span><sup>2</sup>&nbsp;+&nbsp;
+	<input id="oms_c2" size="2" tabindex="2" class="oms_input_int_right">
+	<span class="oms_formula">x</span>&nbsp;+&nbsp;
+	<input id="oms_c3" size="2" tabindex="3" class="oms_input_int_right">&nbsp;=&nbsp;0
+	<p><input id="oms_nabor" onclick="oms_solve_qe()" type="button" value="Розв'язати квадратне рівняння" tabindex="4"></p>
+</div>
+
+Розвязок:
+<div id="rez" >
+</div>
+<script type="text/javascript">
+var hints = '';
+
+oms_nabor.onclick = function() {
+        
+    var num1 = $('#oms_c1').val(); 
+	var num2 = $('#oms_c2').val(); 
+	var num3 = $('#oms_c3').val(); 
+	hints += num1 + "x2" + " + " + num2 + "x" + " + " + num3 + '<br>';
+	$('#rez').html(hints);
+	
+	var D = Math.pow(num2,2) - 4*num1*num3;
+	hints += D + "<br>";
+	$('#rez').html(hints);
+	if(D<0){
+		hints+="Так як дискримінант менше нуля, то рівняння не має дійсних коренів. " + '<br>';
+		$('#rez').html(hints);
+	} else if(D==0){
+		var x1 = (-num2 + D)/(num1 * 2);
+		hints+= "Так як дискримінант дорівнює нулю то, квадратні рівняння має один дійсний корінь:"+ '<br>';
+		$('#rez').html(hints);
+		hints+= x1 + '<br>';
+		$('#rez').html(hints);
+	} else {
+		hints+= "Так як дискримінант більше нуля то, квадратне рівняння має два дійсних кореня:"+ '<br>';
+		$('#rez').html(hints);
+		var x1 = (-num2 + D)/(num1 * 2);
+		hints+= "x1 = " + x1 + '<br>';
+		$('#rez').html(hints);
+		var x2 = (-num2 - D)/(num1 * 2);
+		hints+= "x2 = "+ x2 + '<br>';
+		$('#rez').html(hints);
+	}
+   
+  }
+
+</script>
+
+</body>
+</html>
