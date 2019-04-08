@@ -20,20 +20,22 @@
 Знаходження невідомої сторони прямокутного трикутника<br>
 Сторона А
 <input name="number" id="you_num">
+
 Сторона B
 <input name="number" id="you_num1">
-<div class="dropdown open">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Сторони є
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" id="2K" href="#">Двома катетами</a>
-    <a class="dropdown-item" id="СAH" href="#">Катетом і гіпотенузою</a>
-  </div>
-</div>
+
+
 <button id="input_num">Розрахувати</button>
-<div id="rez" width="300" border="2px">
-  
+<br>
+<br>
+
+<label class="paylabel" for="cardtype">Сторони є:</label>
+<select id="cardtype" name="cards">
+    <option value="2K">Двома катетами</option>
+    <option value="KAH">Катетом і гіпотенузою</option>
+</select><br/>
+<br>
+<div id="rez">
 </div>
 <script type="text/javascript">
 var hints = '';
@@ -42,12 +44,17 @@ input_num.onclick = function() {
         
     var num1 = $('#you_num').val(); 
 	var num2 = $('#you_num1').val(); 
-	if($('#2K')){
-		var side = sqrt(num1^2 + num2^2);
-		hints += side; 
-	} else if($('#KAH')){
-		var side = sqrt(num1^2 - num2^2);
-		hints += side; 
+	hints += "Сторона C"+ '<br>';
+	$('#rez').html(hints);
+	var card = document.getElementById("cardtype");
+	if(card.selectedIndex == 0) {
+		var side = Math.sqrt(Math.pow(num1,2) + Math.pow(num2,2));
+		hints += side + '<br>'; 
+		$('#rez').html(hints);
+	} else {
+		var side = Math.sqrt(Math.pow(num1,2) - Math.pow(num2,2));
+		hints += side +'<br>'; 
+		$('#rez').html(hints);
 	}
 	
       
@@ -58,9 +65,6 @@ input_num.onclick = function() {
   }
 
     </script>
-
-
-
 
 </body>
 </html>
