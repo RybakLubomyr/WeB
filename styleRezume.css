@@ -1,0 +1,81 @@
+body { 
+font-family: 'Times New Roman', serif;
+font-size: 12pt;
+text-align: left;
+font-family: momospace;
+line-height: 1;
+color: #222;
+}
+h2 {
+font-family: Arial, sans-serif;
+font-size: 16pt;
+text-align: center;
+color: #b2a482;
+font-weight: 900;
+}
+h3{
+font-family: Arial, sans-serif;
+font-size: 14pt;
+color: #665d4b;
+font-weight: 500;
+font-style: italic;
+}
+table{
+text-align: center;
+margin: auto;
+}
+.gradient {
+    background-color: #b2b2ac;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZGVkZWRlIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM4Njg2N2IiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2NhY2FjYSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(222, 222, 222)),color-stop(1, rgb(134, 134, 123)),color-stop(1, rgb(202, 202, 202)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(top,rgb(222, 222, 222) 0%,rgb(134, 134, 123) 100%,rgb(202, 202, 202) 100.2%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to bottom,rgb(222, 222, 222) 0%,rgb(134, 134, 123) 100%,rgb(202, 202, 202) 100.2%);
+    background-image: -ms-repeating-linear-gradient(top,rgb(222, 222, 222) 0%,rgb(134, 134, 123) 100%,rgb(202, 202, 202) 100.2%);
+}
+ 
+/* IE8- CSS hack */
+@media \0screen\,screen\9 {
+    .gradient {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffdedede",endColorstr="#ffcacaca",GradientType=0);
+    }
+}
+.th1{
+  background:#fff;
+}
+.th1:hover{
+  background:#ff0000;
+}
+.th2{
+  background:#fff;
+}
+.th2:hover{
+  background:#ffbb00;
+}
+.th3{
+  background:#fff;
+}
+.th3:hover{
+  background:#c7ff00;
+}
+.th4{
+  background:#fff;
+}
+.th4:hover{
+  background:#00ff8c;
+}
+.th5{
+  background:#fff;
+}
+.th5:hover{
+  background:#0087ff;
+}
+.th6{
+  background:#fff;
+}
+.th6:hover{
+  background:#aa00ff;
+  -webkit-transition: background 2s ease;
+}
